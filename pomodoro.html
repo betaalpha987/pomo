@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Title Here</title>
+  <meta name="description" content="Add description here">
+  <meta name="author" content="Kevin Nolan">
+
+</head>
+
+<body>
+<div id="disp-time">00:00</div>
+
+<button class="btn-start"   onClick="start()">Start</button>
+<button class="btn-stop"    onClick="stop()">Stop</button>
+<button class="btn-reset"   onClick="reset()">Reset</button><br/>
+<button class="btn-cust-up" onClick="setStTime(stTime + 1)">Up</button>
+<button class="btn-cust-dn" onClick="setStTime(stTime - 1)">Dn</button><br/>
+<button class="btn-pomo"    onClick="setStTime(25)">Pomodoro</button>
+<button class="btn-short"   onClick="setStTime(5)">Short break</button>
+<button class="btn-long"    onClick="setStTime(10)">Long break</button>
+
+<script>
+  // Start a 25 minute pomodoro, and the timer will go off when timer
+  //   has elapsed.
+  // Reset the clock for each pomodoro
+  // Customise the length of each pomodoro
+  // Optional (but important): make mobile friendly
+  // Optional: timer and alarm appears in title (tab name)
+  // Optional: Use Bootstrap where able
+  // Optional: avoid for loops, use arrow functions
+  // Optional: ususual input to make winding more physical
+  // Optional: Screen flash and audio when alarm sounds
+  // Optional: keyboard shortcuts
+  // Optional: Allow Chrome notifications
+  // Optional: Different tomato products depend on time length: 
+    // bruscetta (<=5) , pizza (5-10), spag bol (15-pomodoro), 
+
+  // 1. Put in basic functionality to satisfy all user reqs
+  // 2. Style it
+  let stTime = 25; let currTime = [stTime,0]; // Minutes , seconds
+  let counting = false; // Whether the clock is currently ticking down
+  let timer = 0; // holds the setInterval ID
+  updateDisp();
+
+  function tick() {
+    currTime [1] -=1;
+    if (currTime[0] <= 0 & currTime[1] <= 0) {
+      updateDisp();
+      console.log("Time!")
+      clearInterval(timer);
+    } else {
+      if (currTime[1] <0) {
+        currTime[0] -=1; currTime[1] = 59;
+      }
+    }
+    updateDisp();
+  }
+  
+  function updateDisp() {
+    const disp = document.getElementById("disp-time");
+    let str = currTime[0] < 10 ? "0" + currTime[0] : currTime[0];
+    str += ":" + (currTime[1] < 10 ? "0" + currTime[1] : currTime[1]);
+    disp.innerHTML = str;
+  }
+
+  function start() {
+    if (!counting) {
+      timer = setInterval(tick,1000);
+      counting = true;
+    }
+  }
+
+  function stop() {
+    clearInterval(timer);
+    counting = false;
+  }
+
+  function reset() {
+    stop();
+    currTime = [stTime,0];
+    updateDisp();
+  }
+
+  function setStTime(t) {
+    if (t < 1) t = 1;
+    else if (t > 60) t = 60;
+    stTime = t; currTime = [t,0];
+    updateDisp();
+    stop();
+  }
+
+  </script>
+
+</body>
+
+</html>
