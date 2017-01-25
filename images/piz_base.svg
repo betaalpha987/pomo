@@ -11,13 +11,13 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="448.44647"
    height="653.36804"
-   viewBox="0 0 448.44647 653.36801"
-   id="svg6570"
+   viewBox="0 0 448.44648 653.36801"
+   id="svg10468"
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="piz_base.svg">
   <defs
-     id="defs6572">
+     id="defs10470">
     <clipPath
        id="clipPath15437"
        clipPathUnits="userSpaceOnUse">
@@ -26,25 +26,17 @@
          id="path15439"
          d="m 224.663,591.17 340.008,0 0,-340.009 -340.008,0 0,340.009 z" />
     </clipPath>
-    <clipPath
-       id="clipPath15437-7"
-       clipPathUnits="userSpaceOnUse">
-      <path
-         inkscape:connector-curvature="0"
-         id="path15439-6"
-         d="m 224.663,591.17 340.008,0 0,-340.009 -340.008,0 0,340.009 z" />
-    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0"
+     inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="729.99026"
-     inkscape:cy="370.69772"
+     inkscape:cx="1054.9376"
+     inkscape:cy="-361.88743"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -52,14 +44,14 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
+     units="px"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     units="px" />
+     inkscape:window-maximized="1" />
   <metadata
-     id="metadata6575">
+     id="metadata10473">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -74,10 +66,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(776.41883,-249.69191)">
+     transform="translate(1101.3661,482.89323)">
     <g
        id="g28208"
-       transform="matrix(0.96566523,0,0,0.96566523,-1133.4917,65.530843)">
+       transform="matrix(0.96566523,0,0,0.96566523,-1458.439,-667.0543)">
       <g
          transform="matrix(1.25,0,0,-1.25,587.57003,823.72414)"
          id="g15193">
@@ -621,13 +613,13 @@
     </g>
     <g
        id="g15433"
-       transform="matrix(1.2070815,0,0,-1.2070815,-1034.1851,981.44861)">
+       transform="matrix(1.2070815,0,0,-1.2070815,-1359.1323,248.8635)">
       <g
          id="g15435" />
       <g
          id="g15441">
         <g
-           clip-path="url(#clipPath15437-7)"
+           clip-path="url(#clipPath15437)"
            id="g15443"
            style="opacity:0.16000402">
           <g
@@ -671,7 +663,7 @@
     </g>
     <g
        id="g15461"
-       transform="matrix(1.2070815,0,0,-1.2070815,-733.11239,468.09386)"
+       transform="matrix(1.2070815,0,0,-1.2070815,-1058.0596,-264.49128)"
        style="fill:#f1ab54;fill-opacity:1">
       <path
          d="m 0,0 c 0,-82.492 66.873,-149.365 149.365,-149.365 82.492,0 149.365,66.873 149.365,149.365 0,82.492 -66.873,149.365 -149.365,149.365 C 66.873,149.365 0,82.492 0,0"
@@ -681,7 +673,7 @@
     </g>
     <g
        id="g20113-4"
-       transform="matrix(1.2070815,0,0,-1.2070815,-621.42319,366.18199)"
+       transform="matrix(1.2070815,0,0,-1.2070815,-946.37041,-366.40315)"
        style="fill:#ed9527;fill-opacity:1">
       <path
          d="m 0,0 c 0,-2.34 -1.897,-4.236 -4.236,-4.236 -2.34,0 -4.236,1.896 -4.236,4.236 0,2.34 1.896,4.236 4.236,4.236 C -1.897,4.236 0,2.34 0,0"
@@ -691,7 +683,7 @@
     </g>
     <g
        id="g20113-4-1"
-       transform="matrix(0.88947573,0,0,-0.52734675,-642.04773,547.01961)"
+       transform="matrix(0.88947573,0,0,-0.52734675,-966.99495,-185.56553)"
        style="fill:#ed9527;fill-opacity:1">
       <path
          d="m 0,0 c 0,-2.34 -1.897,-4.236 -4.236,-4.236 -2.34,0 -4.236,1.896 -4.236,4.236 0,2.34 1.896,4.236 4.236,4.236 C -1.897,4.236 0,2.34 0,0"
@@ -701,7 +693,7 @@
     </g>
     <g
        id="g20113-4-1-6"
-       transform="matrix(0.88947573,0,0,-0.52734675,-510.50964,497.66803)"
+       transform="matrix(0.88947573,0,0,-0.52734675,-835.45686,-234.91711)"
        style="fill:#ed9527;fill-opacity:1">
       <path
          d="m 0,0 c 0,-2.34 -1.897,-4.236 -4.236,-4.236 -2.34,0 -4.236,1.896 -4.236,4.236 0,2.34 1.896,4.236 4.236,4.236 C -1.897,4.236 0,2.34 0,0"
@@ -711,7 +703,7 @@
     </g>
     <g
        id="g20113-4-1-61"
-       transform="matrix(1.2070815,0,0,-1.2070815,-446.22393,386.87475)"
+       transform="matrix(1.2070815,0,0,-1.2070815,-771.17115,-345.71039)"
        style="fill:#ed9527;fill-opacity:1">
       <path
          d="m 0,0 c 0,-2.34 -1.897,-4.236 -4.236,-4.236 -2.34,0 -4.236,1.896 -4.236,4.236 0,2.34 1.896,4.236 4.236,4.236 C -1.897,4.236 0,2.34 0,0"
@@ -721,7 +713,7 @@
     </g>
     <g
        id="g20113-4-1-1"
-       transform="matrix(1.2563852,0,0,-0.96508585,-585.13793,442.41016)"
+       transform="matrix(1.2563852,0,0,-0.96508585,-910.08515,-290.17498)"
        style="fill:#ed9527;fill-opacity:1">
       <path
          d="m 0,0 c 0,-2.34 -1.897,-4.236 -4.236,-4.236 -2.34,0 -4.236,1.896 -4.236,4.236 0,2.34 1.896,4.236 4.236,4.236 C -1.897,4.236 0,2.34 0,0"
@@ -731,7 +723,7 @@
     </g>
     <g
        id="g20113-4-1-8"
-       transform="matrix(1.2563852,0,0,-1.290752,-547.80534,600.34625)"
+       transform="matrix(1.2563852,0,0,-1.290752,-872.75256,-132.23889)"
        style="fill:#ed9527;fill-opacity:1">
       <path
          d="m 0,0 c 0,-2.34 -1.897,-4.236 -4.236,-4.236 -2.34,0 -4.236,1.896 -4.236,4.236 0,2.34 1.896,4.236 4.236,4.236 C -1.897,4.236 0,2.34 0,0"
@@ -741,7 +733,7 @@
     </g>
     <g
        id="g20113-4-1-19"
-       transform="matrix(1.2563852,0,0,-1.290752,-420.01301,504.46187)"
+       transform="matrix(1.2563852,0,0,-1.290752,-744.96023,-228.12327)"
        style="fill:#ed9527;fill-opacity:1">
       <path
          d="m 0,0 c 0,-2.34 -1.897,-4.236 -4.236,-4.236 -2.34,0 -4.236,1.896 -4.236,4.236 0,2.34 1.896,4.236 4.236,4.236 C -1.897,4.236 0,2.34 0,0"
@@ -751,7 +743,7 @@
     </g>
     <g
        id="g20113-4-1-6-7"
-       transform="matrix(0.88947573,0,0,-0.52734675,-539.99726,367.56154)"
+       transform="matrix(0.88947573,0,0,-0.52734675,-864.94448,-365.0236)"
        style="fill:#ed9527;fill-opacity:1">
       <path
          d="m 0,0 c 0,-2.34 -1.897,-4.236 -4.236,-4.236 -2.34,0 -4.236,1.896 -4.236,4.236 0,2.34 1.896,4.236 4.236,4.236 C -1.897,4.236 0,2.34 0,0"
@@ -761,7 +753,7 @@
     </g>
     <g
        id="g20113-4-1-6-1"
-       transform="matrix(0.88947573,0,0,-0.52734675,-666.91327,454.47141)"
+       transform="matrix(0.88947573,0,0,-0.52734675,-991.86049,-278.11373)"
        style="fill:#ed9527;fill-opacity:1">
       <path
          d="m 0,0 c 0,-2.34 -1.897,-4.236 -4.236,-4.236 -2.34,0 -4.236,1.896 -4.236,4.236 0,2.34 1.896,4.236 4.236,4.236 C -1.897,4.236 0,2.34 0,0"

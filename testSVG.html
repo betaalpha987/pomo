@@ -16,18 +16,38 @@
     }
 
     .pizza-frame {
-      width: 480px;
-      height: 600px;
+      width: 450px;
+      height: 653px;
       top: 50px;
       margin: auto;
       position:relative;
-      border: 1px solid black;
+      padding:0px;
     }
 
-    .pizza-bkg {
+    .piz {
       position:absolute;
-      top:0px;
-      left:0px;
+      margin:0px;
+            padding:0px;
+
+    }
+    .bkg {
+      bottom:15px; left:15px;
+      z-index:-1;
+    }
+    .t-base {
+
+      bottom:254px; left:43px;
+      z-index: 0;
+    }
+    .rim {
+
+      bottom:228px; left:18px;
+      z-index:1;
+    }
+    .c-base {
+      bottom:272px; left:60px;
+
+      z-index: 2;
     }
   </style>
 </head>
@@ -37,12 +57,10 @@
   <h1>My first SVG</h1>
 
   <div class="pizza-frame">
-    <svg width = "100" height="100">
-      <circle cx="80" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
-      Sorry, your browser does not support inline SVG.
-    </svg>
-Updated!
-    <img src="images\piz_base.svg" class="pizza-bkg"/>
+    <img src="images\piz_base.svg" class="piz bkg"/>
+    <img src="images\piz_base_tom.svg" class="piz t-base"/>
+    <img src="images\piz_rim.svg" class="piz rim"/>
+    <img src="images\piz_base_cheese.svg" class="piz c-base"/>
   </div>
 
 
