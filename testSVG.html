@@ -84,9 +84,9 @@ function randPN(i) { // return a random number between -i and i
 }
 
 function addTopping(tP,tPNum) {
-  const ringChoice=[[1,6,10],[1,7,9],[0,5,12]]; // Toppings go on in rings from the center
+  const ringChoice=[[1,3,6,10],[0,6,14],[0,2,7,11]]; // Toppings go on in rings from the center
   rings = ringChoice[tP.distrib];
-  const ringSpace = 70; // Spacing between each topping ring. Also determines total radius.
+  const ringSpace = 180 / rings.length; // Calc spacing between topping rings based on total no. rings
   const frame = document.getElementById("pizza-frame");
   const xC = 225; const yC = 185; // Offsets, for placing toppings in the center of the pizza
   const posStagger = 20; // Max random position deviation
