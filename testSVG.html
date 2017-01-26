@@ -69,22 +69,23 @@
   </div>
 <script>
 
-const toppings = [ {name: "tomatoes", src: "piz_ing_tomato.svg"},
-                   {name: "mushrooms", src: "piz_ing_mushroom.svg"},
-                   {name: "basil", src: "piz_ing_basil.svg"},
-                   {name: "green olives", src: "piz_ing_greenolive.svg"},
-                   {name: "black olives", src: "piz_ing_blackolive.svg"}];
+const toppings = [ {name: "tomatoes", src: "piz_ing_tomato.svg", distrib: 0},
+                   {name: "mushrooms", src: "piz_ing_mushroom.svg", distrib: 1},
+                   {name: "basil", src: "piz_ing_basil.svg", distrib: 2},
+                   {name: "green olives", src: "piz_ing_greenolive.svg", distrib: 0},
+                   {name: "black olives", src: "piz_ing_blackolive.svg", distrib: 1}];
 
-for (let i=0; i < 5; i++) {
-  document.body.onload = addTopping(i);
+for (let i=0; i < 5; i++) {  
+  document.body.onload = addTopping(toppings[i],i);
 }
 
 function randPN(i) { // return a random number between -i and i
   return Math.random() * i * (Math.floor(Math.random()*2) == 1 ? 1 : -1);
 }
 
-function addTopping(tp) {
-  const rings=[1,6,10]; // Toppings go on in rings from the center
+function addTopping(tP,tPNum) {
+  const ringChoice=[[1,6,10],[1,7,9],[0,5,12]]; // Toppings go on in rings from the center
+  rings = ringChoice[tP.distrib];
   const ringSpace = 70; // Spacing between each topping ring. Also determines total radius.
   const frame = document.getElementById("pizza-frame");
   const xC = 225; const yC = 185; // Offsets, for placing toppings in the center of the pizza
@@ -92,12 +93,12 @@ function addTopping(tp) {
   const rotStagger = 50; // Max random rotation deviation
 
   for (let h=0; h < rings.length; h++) { // Loop once for each placement ring
-    for (let i=0; i<rings[h];i++) {          // Loop once for each topping to drop in the placement ring
+    for (let i=0; i<rings[h];i++) {      // Loop once for each topping to drop in the placement ring
       const topping = document.createElement("img");
       frame.appendChild(topping);
       topping.className = "piz";
-      topping.src='images\\'+toppings[tp].src;
-      topping.style.zIndex = tp+5;
+      topping.src='images\\'+tP.src;
+      topping.style.zIndex = tPNum+5;
       topping.style.transform = 'rotate('+randPN(rotStagger)+'deg)';
 
       let angle = (i/rings[h])*Math.PI*2;
