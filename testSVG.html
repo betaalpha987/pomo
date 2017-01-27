@@ -46,8 +46,16 @@
       z-index: 2;
     }
     .topp { /*Toppings. Empty for time being*/
-    }
+      animation: topp-anim 1s ease-in;
 
+    }
+    @keyframes topp-anim {
+      from {
+        transform:scale(2);
+        opacity:0;
+      }
+
+    }
 
   </style>
 
@@ -122,7 +130,7 @@ function addTopping(tPSrc,tPNum,depth,disArr) { // Topping img src, number, dept
 
   const topping = document.createElement("img");
   frame.appendChild(topping);
-  topping.className = "piz";
+  topping.className = "piz topp";
   topping.src='images\\'+tPSrc;
   topping.style.zIndex = depth;
   topping.style.transform = 'rotate('+randPN(rotStagger)+'deg)';
