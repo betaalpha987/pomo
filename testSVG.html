@@ -70,11 +70,23 @@ dropToppings();
 // Let num = 1 to 20
 // Above 20 go to next topping and set number back to 1
 function dropToppings() {
-  const toppings = [ {name: "tomatoes", src: "piz_ing_tomato.svg"},
-                   {name: "mushrooms", src: "piz_ing_mushroom.svg"},
-                   {name: "basil", src: "piz_ing_basil.svg"},
-                   {name: "green olives", src: "piz_ing_greenolive.svg"},
-                   {name: "black olives", src: "piz_ing_blackolive.svg"}];
+  const toppings = [ {name: "tomatoes",            src: "piz_ing_tomato.svg"},
+                   {name: "mushrooms",             src: "piz_ing_mushroom.svg"},
+                   {name: "green olives",          src: "piz_ing_greenolive.svg"},
+                   {name: "bacon",                 src: "piz_ing_bacon.svg"},
+                   {name: "green peppers",          src: "piz_ing_greenpepper.svg"},
+                   {name: "pepperoni",          src: "piz_ing_pepperoni.svg"},
+                   {name: "pineapple",          src: "piz_ing_pineapple.svg"},
+                   {name: "red chilli peppers",          src: "piz_ing_redchilli.svg"},
+                   {name: "red onions",          src: "piz_ing_redonion.svg"},
+                   {name: "shrimp",          src: "piz_ing_shrimp.svg"},
+                   {name: "salami",          src: "piz_ing_salami.svg"},
+                   {name: "parsley",          src: "piz_ing_parsley.svg"},
+                   {name: "red peppers",          src: "piz_ing_redpepper.svg"},
+                   {name: "green chilli peppers",  src: "piz_ing_greenchilli.svg"},
+                   {name: "yellow peppers",          src: "piz_ing_yellowpepper.svg"},
+                   {name: "black olives",          src: "piz_ing_blackolive.svg"},
+                   {name: "basil",                 src: "piz_ing_basil.svg"} ];
 
   // Toppings distributed in disArr from the center. Each array adds to 20.
   const distrib=[[1,3,6,10],[0,6,14],[0,2,7,11]];
@@ -95,7 +107,7 @@ function dropToppings() {
     }
     if (dNum >= distrib.length) dNum = 0;
     if (toppType >= toppings.length) toppType=0;
-  },500);
+  },1000);
 }
 
 function randPN(i) { // return a random number between -i and i
