@@ -127,13 +127,16 @@ function addTopping(tPSrc,tPNum,depth,disArr) { // Topping img src, number, dept
   const xC = 225; const yC = 185; // Offsets, for placing toppings in the center of the pizza
   const posStagger = 20; // Max random position deviation
   const rotStagger = 180; // Max random rotation deviation
+  const scaStagger = 0.3; // Max random scale deviation
 
   const topping = document.createElement("img");
   frame.appendChild(topping);
   topping.className = "piz topp";
   topping.src='images\\'+tPSrc;
   topping.style.zIndex = depth;
-  topping.style.transform = 'rotate('+randPN(rotStagger)+'deg)';
+  topping.style.transform = 'rotate('+randPN(rotStagger)
+    + 'deg) scale(' + (1+Math.random()*scaStagger) + ')';
+  topping.style.transform
 
   // Calc spacing between topping rings based on total no. rings
   const ringSpace = 180 / disArr.length; 
