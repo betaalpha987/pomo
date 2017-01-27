@@ -48,10 +48,6 @@
     .topp { /*Toppings. Empty for time being*/
     }
 
-    .rotat {
-      transform: rotate(-50deg);
-      background-color: green;
-    }
 
   </style>
 
@@ -69,37 +65,36 @@
   </div>
 <script>
 
-
+//debugger;
 dropToppings();
 // Let num = 1 to 20
 // Above 20 go to next topping and set number back to 1
 function dropToppings() {
-  const toppings = [ {name: "tomatoes", src: "piz_ing_tomato.svg", distrib: 0},
-                   {name: "mushrooms", src: "piz_ing_mushroom.svg", distrib: 1},
-                   {name: "basil", src: "piz_ing_basil.svg", distrib: 2},
-                   {name: "green olives", src: "piz_ing_greenolive.svg", distrib: 0},
-                   {name: "black olives", src: "piz_ing_blackolive.svg", distrib: 1}];
+  const toppings = [ {name: "tomatoes", src: "piz_ing_tomato.svg"},
+                   {name: "mushrooms", src: "piz_ing_mushroom.svg"},
+                   {name: "basil", src: "piz_ing_basil.svg"},
+                   {name: "green olives", src: "piz_ing_greenolive.svg"},
+                   {name: "black olives", src: "piz_ing_blackolive.svg"}];
 
   // Toppings distributed in disArr from the center. Each array adds to 20.
   const distrib=[[1,3,6,10],[0,6,14],[0,2,7,11]];
 
-  let toppNum=0;  // The number of toppings on the pizza so far
+  let toppNum=0;  // Num. toppings on the pizza so far for that topping type
   let toppType=0; // Which topping object to use
   let dNum=0;     // Which distribution array to use
   let depth = 5;  // z-depth of topping. Can't use toppType because it eventually loops.
+
   const timer = setInterval (function() {
-    addTopping(toppings[toppType],toppNum,depth,distrib[dNum]);
+    addTopping(toppings[toppType].src,toppNum,depth,distrib[dNum]);
     toppNum +=1;
-    depth +=1;
-    dNum +=1;
-    if (toppNum > 20) {
+    if (toppNum >= 20) { // After 20 toppings of one type go onto the next
       toppNum = 0;
       toppType +=1;
+      dNum +=1;
+      depth +=1;
     }
-    if (toppType > toppings.length) {
-      console.log("All toppings added. Back to topping 0.");
-      toppType=0;
-    }
+    if (dNum >= distrib.length) dNum = 0;
+    if (toppType >= toppings.length) toppType=0;
   },500);
 }
 
@@ -107,23 +102,23 @@ function randPN(i) { // return a random number between -i and i
   return Math.random() * i * (Math.floor(Math.random()*2) == 1 ? 1 : -1);
 }
 
-function addTopping(tP,tPNum,depth,disArr) { // Topping object, number, depth, distrib array
+function addTopping(tPSrc,tPNum,depth,disArr) { // Topping img src, number, depth, distrib array
   const frame = document.getElementById("pizza-frame");
   const xC = 225; const yC = 185; // Offsets, for placing toppings in the center of the pizza
   const posStagger = 20; // Max random position deviation
-  const rotStagger = 50; // Max random rotation deviation
+  const rotStagger = 180; // Max random rotation deviation
 
   const topping = document.createElement("img");
   frame.appendChild(topping);
   topping.className = "piz";
-  topping.src='images\\'+tP.src;
+  topping.src='images\\'+tPSrc;
   topping.style.zIndex = depth;
   topping.style.transform = 'rotate('+randPN(rotStagger)+'deg)';
 
   // Calc spacing between topping rings based on total no. rings
   const ringSpace = 180 / disArr.length; 
   // Choose ring to use based on number of toppings placed so far
-    let ring = 0;
+  let ring = 0;
   if (tPNum < disArr[0]) { // Put this into a loop later
     ring = 0;
   }
@@ -133,27 +128,19 @@ function addTopping(tP,tPNum,depth,disArr) { // Topping object, number, depth, d
   } else if (tPNum < (disArr[0] + disArr[1] + disArr[2])) {
     ring = 2;
     tPNum -= (disArr[0] + disArr[1]);
-    ring = 1;
   } else {
     ring = 3;
     tPNum -= (disArr[0] + disArr[1] + disArr[2]);
   }
-  let radius = ringSpace*(ring+1)
+  let radius = ringSpace*(ring);
   // Determine angle in ring to place topping in (i) 
   let angle = (tPNum/disArr[ring]) * Math.PI*2;
 
-  //for (let h=0; h < disArr.length; h++) { // Loop once for each placement ring
-    //for (let i=0; i<disArr[h];i++) {      // Loop once for each topping to drop in the placement ring
-      //let angle = (i/disArr[h])*Math.PI*2;
+  let x = (Math.cos(angle)*radius) + xC + randPN(posStagger);
+  let y = (Math.sin(angle)*radius) + yC + randPN(posStagger);
 
-      let x = (Math.cos(angle)*radius) + xC + randPN(posStagger);
-      let y = (Math.sin(angle)*radius) + yC + randPN(posStagger);
-
-      topping.style.left=x.toString()+"px";
-      topping.style.top=y.toString()+"px";
-    }
-  }
-
+  topping.style.left=x.toString()+"px";
+  topping.style.top=y.toString()+"px";
 }
 
 </script>
